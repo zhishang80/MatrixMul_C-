@@ -70,8 +70,8 @@ int main(int argc, char *argv[])
             offset = offset + rows;
         }
 
-        //Multiply the extra matrix part left at master
-        for (auto ic=L-extra; ic<L; ic++){
+        //Multiply the extra (rows at master + extra) matrix part left at master
+        for (auto ic=L-(rows+extra); ic<L; ic++){
             for (auto jc=0; jc<M; jc++){
                 c[ic][jc] = 0.0;
                 for (auto ja=0; ja<N; ja++){
